@@ -2,10 +2,9 @@ $base-color: black;
 $border: 1px solid lighten($base-color, 90%);
 
 @keyframes animateIn {
-
   0% {
     opacity: 0;
-    transform: scale(.6) translateY(-8px);
+    transform: scale(0.6) translateY(-8px);
   }
 
   100% {
@@ -14,7 +13,6 @@ $border: 1px solid lighten($base-color, 90%);
 }
 
 @keyframes rotate {
-
   0% {
     transform: rotate(0deg);
   }
@@ -25,7 +23,6 @@ $border: 1px solid lighten($base-color, 90%);
 }
 
 @keyframes prixClipFix {
-
   0% {
     clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);
   }
@@ -131,7 +128,7 @@ $border: 1px solid lighten($base-color, 90%);
       border-bottom: 0;
       display: flex;
       flex-direction: column;
-      padding: 1rem 1rem .5rem;
+      padding: 1rem;
       text-align: center;
     }
 
@@ -154,7 +151,7 @@ $border: 1px solid lighten($base-color, 90%);
       border-bottom: 1.25px solid currentColor;
       border-top: 1.25px solid currentColor;
       margin-bottom: 1rem;
-      margin-top: .75rem;
+      margin-top: 0.75rem;
     }
   }
 

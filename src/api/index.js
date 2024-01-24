@@ -7,7 +7,7 @@ import { request } from "./helpers";
  */
 export default async function getData() {
   try {
-    const response = await request("api/vehicles.json");
+    const response = await request("/api/vehicles.json");
     const vehicleList = response || [];
 
     const detailPromises = vehicleList.map(async (vehicle) => {

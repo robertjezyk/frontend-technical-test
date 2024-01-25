@@ -18,7 +18,6 @@ export default async function getData() {
           ...detailResponse,
         };
       } catch (error) {
-        console.warn("Error fetching vehicle details:", error);
         return null; // Return null for unsuccessful responses (404 - /api/vehicle_problematic.json)
       }
     });

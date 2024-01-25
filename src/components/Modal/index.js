@@ -72,16 +72,16 @@ export default function Modal({ isOpen, onClose, vehicleData }) {
             </ul>
           </>
         )}
-        <span
+        <button
           onClick={onClose}
           onKeyUp={handleButtonKeyUp}
           className="modal-dialog__close-button"
           aria-label="Close modal"
           tabIndex={0}
-          role="button"
+          type="button"
         >
           &#x2715;
-        </span>
+        </button>
       </div>
     </dialog>,
     document.body

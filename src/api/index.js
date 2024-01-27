@@ -22,8 +22,10 @@ export default async function getData() {
       }
     });
 
-    const vehicleDetailsList = await Promise.all(detailPromises);
-    return vehicleDetailsList.filter((vehicle) => vehicle && vehicle.price);
+    const vehicleDetailsList = await Promise.allSettled(detailPromises);
+    return vehicleDetailsList
+      .map((item) => item.value)
+      .filter((vehicle) => vehicle && vehicle.price);
   } catch (error) {
     console.warn("Error in getData function:", error);
     throw error;

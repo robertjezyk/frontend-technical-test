@@ -16,7 +16,7 @@ export default function VehicleList() {
   if (error) {
     return (
       <div data-testid="error" role="alert">
-        {error}
+        {error.message}
       </div>
     );
   }
@@ -30,8 +30,8 @@ export default function VehicleList() {
   };
 
   const handleOnClose = () => {
-    setVehicleData({});
     closeDialog();
+    setVehicleData({});
   };
 
   return (

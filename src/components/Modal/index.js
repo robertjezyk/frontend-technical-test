@@ -9,16 +9,24 @@ export default function Modal({ isOpen, onClose, vehicleData }) {
 
   const dialog = useRef();
 
-  const handleButtonKeyUp = (event) => {
-    if (event.key === "Enter" || event.key === " ") {
-      event.preventDefault();
+  const handleEscapeKey = (event) => {
+    if (event.key === "Escape") {
       onClose();
     }
   };
 
   useLayoutEffect(() => {
-    dialog.current.showModal();
-  }, [dialog]);
+    const currentDialog = dialog.current;
+
+    currentDialog.showModal();
+
+    window.addEventListener("keydown", handleEscapeKey);
+
+    return () => {
+      currentDialog.close();
+      window.removeEventListener("keydown", handleEscapeKey);
+    };
+  }, []);
 
   const {
     id, media, meta, price
@@ -74,7 +82,6 @@ export default function Modal({ isOpen, onClose, vehicleData }) {
         )}
         <button
           onClick={onClose}
-          onKeyUp={handleButtonKeyUp}
           className="modal-dialog__close-button"
           aria-label="Close modal"
           tabIndex={0}

@@ -9,8 +9,8 @@ export const parser = (templateObject) => {
     let parsedTemplate = template;
 
     Object.keys(values).forEach((key) => {
-      const variable = new RegExp(`\\$${key}`, "g");
-      parsedTemplate = parsedTemplate.replace(variable, values[key]);
+      const regex = new RegExp(`\\$${key}`, "g");
+      parsedTemplate = parsedTemplate.replace(regex, values[key]);
     });
 
     return parsedTemplate;
